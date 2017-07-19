@@ -18,6 +18,7 @@ export class HomePage implements OnInit {
   public timer;
   public dataAtual:string = new Date().toISOString();
   public loader;
+  public isDesatre;
 
 
   constructor(public navCtrl:NavController,
@@ -71,8 +72,13 @@ export class HomePage implements OnInit {
 
     this.dataAtual = new Date().toISOString();
     if (this.status.status != "Normal") {
-      this.navCtrl
-        .push(AlertPage, {alert: this.status.status});
+      if(this.isDesatre != true){
+        this.navCtrl
+          .push(AlertPage, {alert: this.status.status});
+      }
+      this.isDesatre = true;
+    }else{
+      this.isDesatre = false;
     }
   }
 
