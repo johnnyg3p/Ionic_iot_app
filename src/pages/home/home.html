@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Detector de Tragédias
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-card>
+    <ion-item>
+      <ion-label>Data</ion-label>
+      <ion-label>{{ dataAtual | date }}</ion-label>
+    </ion-item>
+
+    <button ion-item (click)="posts()">
+      <ion-icon name="medical" item-start></ion-icon>
+      <ion-label *ngIf="!status.earthquake">Sem previsão de Terremoto </ion-label>
+      <ion-label *ngIf="status.earthquake">Inicio de Terremoto </ion-label>
+    </button>
+
+    <button ion-item (click)="posts()">
+      <ion-icon name="bulb" item-start></ion-icon>
+      Luminosidade {{ status.light }}%
+    </button>
+
+    <button ion-item (click)="posts()">
+      <ion-icon name="thermometer" item-start></ion-icon>
+      Temperatura: {{ status.temp }}ºC
+    </button>
+
+    <button ion-item (click)="posts()">
+      <ion-icon name="logo-twitter" item-start></ion-icon>
+      {{ status.numberTweetsEnchente }} Posts no Twitter
+    </button>
+
+    <button ion-item (click)="checkMessages()">
+      <ion-icon name="call" item-start></ion-icon>
+      Emergência
+    </button>
+
+  </ion-card>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-title>Tarc ++ LTDA</ion-title>
+  </ion-toolbar>
+</ion-footer>

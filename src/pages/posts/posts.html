@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Posts Twitter
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-card>
+    <ion-card-content>
+
+      <ion-item-group>
+        <ion-item-divider color="light">
+          <ion-icon ios="ios-logo-twitter" md="md-logo-twitter" item-left></ion-icon>
+          Noticías Emergência
+        </ion-item-divider>
+
+        <ion-item *ngFor="let post of posts">
+
+          <ion-label>
+            <h2>{{ post?.user }}</h2>
+            <h3>{{ post?.text }}</h3>
+            <h3>{{ post?.date | date: 'medium' }}</h3>
+            <h3>{{ post?.location ? post?.location : 'Sem localização' }}</h3>
+          </ion-label>
+        </ion-item>
+      </ion-item-group>
+
+      <ion-item-divider color="light">
+        TOTAL POSTS: {{posts?.length}}
+      </ion-item-divider>
+
+    </ion-card-content>
+  </ion-card>
+  <button ion-button block>Avançar no Agendamento</button>
+
+</ion-content>
