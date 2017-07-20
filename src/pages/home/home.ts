@@ -30,7 +30,7 @@ export class HomePage implements OnInit {
     setInterval(() => {
       console.log('Async operation has ended');
       this.checkMessages();
-    }, 10000);
+    }, 1000);
 
   }
 
