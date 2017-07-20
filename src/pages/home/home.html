@@ -14,18 +14,18 @@
       <ion-label>{{ dataAtual | date }}</ion-label>
     </ion-item>
 
-    <button ion-item (click)="posts()">
+    <button ion-item>
       <ion-icon name="medical" item-start></ion-icon>
       <ion-label *ngIf="!status.earthquake">Sem previsão de Terremoto </ion-label>
       <ion-label *ngIf="status.earthquake">Inicio de Terremoto </ion-label>
     </button>
 
-    <button ion-item (click)="posts()">
+    <button ion-item >
       <ion-icon name="bulb" item-start></ion-icon>
       Luminosidade {{ status.light }}%
     </button>
 
-    <button ion-item (click)="posts()">
+    <button ion-item>
       <ion-icon name="thermometer" item-start></ion-icon>
       Temperatura: {{ status.temp }}ºC
     </button>
